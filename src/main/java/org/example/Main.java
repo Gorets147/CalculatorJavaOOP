@@ -19,9 +19,9 @@ public class Main {
         }
         System.out.println("sum2 = " + sum2);
 
-        GenBox<Integer> genIntBox1 = new GenBox<>();
-        GenBox<Integer> genIntBox2 = new GenBox<>();
-        //int sum3 = genIntBox1.getObj() + genIntBox2.getObj();
+        GenBox<Integer> genIntBox1 = new GenBox<>(10);
+        GenBox<Integer> genIntBox2 = new GenBox<>(20);
+        int sum3 = genIntBox1.getObj() + genIntBox2.getObj();
 
         Double [] array1 = {1.0, 4.0, 6.0, 10.0};
         BoxWithNumber<Double> boxWithNumber = new BoxWithNumber<>(array1);
@@ -32,6 +32,18 @@ public class Main {
         System.out.println("boxWithNumber1 = " + boxWithNumber1.average());
 
         System.out.println("boxWithNumber = " + boxWithNumber.compare(boxWithNumber1));
+
+
+        GenBox<Double> genDoubleBox1 = new GenBox<>(2.0);
+        GenBox<Double> genDoubleBox2 = new GenBox<>(4.0);
+
+        Calculator calculator = new Calculator();
+        Double resMulti = calculator.multi(genDoubleBox1, genDoubleBox2);
+        System.out.println("res = " + resMulti);
+
+        Double resDiv = calculator.div(genDoubleBox1, genDoubleBox2);
+        System.out.println("res = " + resDiv);
+
 
     }
 }
